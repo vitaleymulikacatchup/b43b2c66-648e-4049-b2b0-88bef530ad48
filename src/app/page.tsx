@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import NavbarStyleMinimal from '@/components/navbar/NavbarStyleMinimal';
@@ -11,6 +11,20 @@ import FaqSplitText from '@/components/sections/faq/FaqSplitText';
 import ContactSplit from '@/components/sections/contact/ContactSplit';
 import FooterBaseReveal from '@/components/sections/footer/FooterBaseReveal';
 import { Award, Building, Coffee, Flame, Globe, GraduationCap, Mail, MessageCircle, Star } from "lucide-react";
+
+const assetMap = [
+  { id: "hero-coffee", url: "https://images.pexels.com/photos/4820657/pexels-photo-4820657.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", alt: "Fresh coffee beans and brewing equipment" },
+  { id: "arabica-blend", url: "https://images.pexels.com/photos/14745651/pexels-photo-14745651.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", alt: "Premium arabica coffee blend" },
+  { id: "espresso-roast", url: "https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", alt: "Dark espresso roast coffee beans" },
+  { id: "french-roast", url: "https://images.pexels.com/photos/669162/pexels-photo-669162.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", alt: "French roast coffee beans" },
+  { id: "sarah-portrait", url: "https://images.pexels.com/photos/33409064/pexels-photo-33409064.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", alt: "Portrait of Sarah" },
+  { id: "mike-portrait", url: "https://images.pexels.com/photos/4559601/pexels-photo-4559601.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", alt: "Portrait of Mike" },
+  { id: "emma-portrait", url: "https://images.pexels.com/photos/6205605/pexels-photo-6205605.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", alt: "Portrait of Emma" },
+  { id: "david-portrait", url: "https://images.pexels.com/photos/927451/pexels-photo-927451.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", alt: "Portrait of David" },
+  { id: "coffee-shop-logo", url: "https://images.pexels.com/photos/16218527/pexels-photo-16218527.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", alt: "Coffee shop logo" },
+  { id: "cafe-logo", url: "https://images.pexels.com/photos/4820659/pexels-photo-4820659.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", alt: "Cafe logo" },
+  { id: "coffee-brewing", url: "https://images.pexels.com/photos/4349787/pexels-photo-4349787.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", alt: "Coffee brewing equipment and setup" }
+];
 
 export default function Home() {
   return (
@@ -31,7 +45,7 @@ export default function Home() {
 
       <div id="hero" data-section="hero">
         <HeroBillboard
-          title="Premium Coffee Experience"
+          title="Yo man"
           description="Discover the perfect blend of tradition and innovation with our carefully sourced, expertly roasted coffee beans"
           tag="Since 1985"
           tagIcon={Coffee}
@@ -45,8 +59,8 @@ export default function Home() {
               href: "about"
             }
           ]}
-          imageSrc="https://images.pexels.com/photos/4820657/pexels-photo-4820657.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-          imageAlt="Fresh coffee beans and brewing equipment"
+          imageSrc={assetMap.find(asset => asset.id === "hero-coffee")?.url || "https://images.pexels.com/photos/4820657/pexels-photo-4820657.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"}
+          imageAlt={assetMap.find(asset => asset.id === "hero-coffee")?.alt || "Fresh coffee beans and brewing equipment"}
         />
       </div>
 
@@ -90,8 +104,8 @@ export default function Home() {
               price: "$24.99",
               rating: 5,
               reviewCount: "2.1k",
-              imageSrc: "https://images.pexels.com/photos/14745651/pexels-photo-14745651.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-              imageAlt: "Premium arabica coffee blend"
+              imageSrc: assetMap.find(asset => asset.id === "arabica-blend")?.url || "https://images.pexels.com/photos/14745651/pexels-photo-14745651.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: assetMap.find(asset => asset.id === "arabica-blend")?.alt || "Premium arabica coffee blend"
             },
             {
               id: "2",
@@ -100,8 +114,8 @@ export default function Home() {
               price: "$28.99",
               rating: 5,
               reviewCount: "1.8k",
-              imageSrc: "https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-              imageAlt: "Dark espresso roast coffee beans"
+              imageSrc: assetMap.find(asset => asset.id === "espresso-roast")?.url || "https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: assetMap.find(asset => asset.id === "espresso-roast")?.alt || "Dark espresso roast coffee beans"
             },
             {
               id: "3",
@@ -110,8 +124,8 @@ export default function Home() {
               price: "$26.99",
               rating: 4,
               reviewCount: "1.5k",
-              imageSrc: "https://images.pexels.com/photos/669162/pexels-photo-669162.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-              imageAlt: "French roast coffee beans"
+              imageSrc: assetMap.find(asset => asset.id === "french-roast")?.url || "https://images.pexels.com/photos/669162/pexels-photo-669162.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: assetMap.find(asset => asset.id === "french-roast")?.alt || "French roast coffee beans"
             }
           ]}
         />
@@ -129,32 +143,32 @@ export default function Home() {
               name: "Sarah",
               handle: "@sarahcoffee",
               testimonial: "The best coffee I've ever tasted! The aroma alone makes my morning perfect. Absolutely love the quality and consistency.",
-              imageSrc: "https://images.pexels.com/photos/33409064/pexels-photo-33409064.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-              imageAlt: "Portrait of Sarah"
+              imageSrc: assetMap.find(asset => asset.id === "sarah-portrait")?.url || "https://images.pexels.com/photos/33409064/pexels-photo-33409064.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: assetMap.find(asset => asset.id === "sarah-portrait")?.alt || "Portrait of Sarah"
             },
             {
               id: "2",
               name: "Mike",
               handle: "@mikesbrews",
               testimonial: "As a coffee enthusiast, I'm incredibly picky about my beans. This company delivers exceptional quality every single time.",
-              imageSrc: "https://images.pexels.com/photos/4559601/pexels-photo-4559601.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-              imageAlt: "Portrait of Mike"
+              imageSrc: assetMap.find(asset => asset.id === "mike-portrait")?.url || "https://images.pexels.com/photos/4559601/pexels-photo-4559601.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: assetMap.find(asset => asset.id === "mike-portrait")?.alt || "Portrait of Mike"
             },
             {
               id: "3",
               name: "Emma",
               handle: "@emmabarista",
               testimonial: "Professional barista here - these beans make the perfect espresso. My customers always ask what coffee I'm using!",
-              imageSrc: "https://images.pexels.com/photos/6205605/pexels-photo-6205605.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-              imageAlt: "Portrait of Emma"
+              imageSrc: assetMap.find(asset => asset.id === "emma-portrait")?.url || "https://images.pexels.com/photos/6205605/pexels-photo-6205605.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: assetMap.find(asset => asset.id === "emma-portrait")?.alt || "Portrait of Emma"
             },
             {
               id: "4",
               name: "David",
               handle: "@davidcafe",
               testimonial: "The subscription service is amazing. Fresh coffee delivered right to my door every month. Never running out again!",
-              imageSrc: "https://images.pexels.com/photos/927451/pexels-photo-927451.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-              imageAlt: "Portrait of David"
+              imageSrc: assetMap.find(asset => asset.id === "david-portrait")?.url || "https://images.pexels.com/photos/927451/pexels-photo-927451.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: assetMap.find(asset => asset.id === "david-portrait")?.alt || "Portrait of David"
             }
           ]}
         />
@@ -167,11 +181,11 @@ export default function Home() {
           tag="Partners"
           tagIcon={Building}
           logos={[
-            "https://images.pexels.com/photos/16218527/pexels-photo-16218527.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-            "https://images.pexels.com/photos/4820659/pexels-photo-4820659.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+            assetMap.find(asset => asset.id === "coffee-shop-logo")?.url || "https://images.pexels.com/photos/16218527/pexels-photo-16218527.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+            assetMap.find(asset => asset.id === "cafe-logo")?.url || "https://images.pexels.com/photos/4820659/pexels-photo-4820659.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
             "https://images.pexels.com/photos/30023630/pexels-photo-30023630.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-            "https://images.pexels.com/photos/4820659/pexels-photo-4820659.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-            "https://images.pexels.com/photos/4820659/pexels-photo-4820659.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+            assetMap.find(asset => asset.id === "cafe-logo")?.url || "https://images.pexels.com/photos/4820659/pexels-photo-4820659.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+            assetMap.find(asset => asset.id === "cafe-logo")?.url || "https://images.pexels.com/photos/4820659/pexels-photo-4820659.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
           ]}
         />
       </div>
@@ -214,8 +228,8 @@ export default function Home() {
           inputPlaceholder="Enter your email"
           buttonText="Subscribe"
           termsText="By subscribing, you agree to receive our weekly coffee newsletter. Unsubscribe anytime."
-          imageSrc="https://images.pexels.com/photos/4349787/pexels-photo-4349787.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-          imageAlt="Coffee brewing equipment and setup"
+          imageSrc={assetMap.find(asset => asset.id === "coffee-brewing")?.url || "https://images.pexels.com/photos/4349787/pexels-photo-4349787.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"}
+          imageAlt={assetMap.find(asset => asset.id === "coffee-brewing")?.alt || "Coffee brewing equipment and setup"}
         />
       </div>
 
